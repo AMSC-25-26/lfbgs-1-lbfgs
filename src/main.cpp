@@ -17,9 +17,11 @@ int main() {
     double x2 = v(1);
 
     Vec res = Vec::Zero(v.size());
-    res(0) = -400 * x1 * (x2 - x1 * x1) - 2 * (1 - x1);
-    res(1) = 200 * (x2 - x1 * x1);
-
+    //corrected the derivative I guess
+    //res(0) = -400 * x1 * (x2 - x1 * x1) - 2 * (1 - x1); 
+    res(0) = -2 * (1 - x1) * (100 * x2 * x2 + 1);
+    //res(1) = 200 * (x2 - x1 * x1);
+    res(1) = 200 * x2 * (x1 - 1)  * (x1 - 1);
     return res;
   };
 
