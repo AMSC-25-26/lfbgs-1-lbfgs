@@ -4,7 +4,8 @@
 #include "minimizer_base.hpp"
 #include <eigen3/Eigen/Eigen>
 
-template <typename V, typename M> class LBFGS : public MinimizerBase<V, M> {
+template <typename V, typename M>
+class LBFGS : public MinimizerBase<V, M> {
   using Base = MinimizerBase<V, M>;
   using Base::_iters;
   using Base::_max_iters;

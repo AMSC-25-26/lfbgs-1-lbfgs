@@ -3,11 +3,11 @@
 #include "common.hpp"
 #include <eigen3/Eigen/Eigen>
 
-template<typename V, typename M>
+template <typename V, typename M>
 class MinimizerBase {
 public:
   virtual ~MinimizerBase() = default;
-  
+
   int iterations() const noexcept {
     return _iters;
   }
@@ -15,7 +15,7 @@ public:
   double tolerance() const noexcept {
     return _tol;
   }
-  
+
   void setMaxIterations(int max_iters) noexcept {
     _max_iters = max_iters;
   }
@@ -23,7 +23,7 @@ public:
   void setTolerance(double tol) noexcept { _tol = tol; }
 
   virtual V solve(V x, M b, VecFun<V, double> &f, GradFun<V> &Gradient) = 0;
-  
+
 protected:
   unsigned int _max_iters = 1000;
   unsigned int _iters = 0;
@@ -36,7 +36,6 @@ protected:
   double c2 = 0.9;
   double rho = 0.5;
 
-  
   double line_search(V x, V p, VecFun<V, double> &f, GradFun<V> &Gradient) {
     double f_x = f(x);
     double grad_f_old = Gradient(x).dot(p);
@@ -73,7 +72,4 @@ protected:
     }
     return alpha;
   }
-
-
-  
 };

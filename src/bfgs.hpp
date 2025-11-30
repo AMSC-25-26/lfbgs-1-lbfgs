@@ -5,7 +5,8 @@
 #include <eigen3/Eigen/Eigen>
 #include <limits>
 
-template <typename V, typename M> class BFGS : public MinimizerBase<V, M> {
+template <typename V, typename M>
+class BFGS : public MinimizerBase<V, M> {
   using Base = MinimizerBase<V, M>;
   using Base::_iters;
   using Base::_max_iters;
