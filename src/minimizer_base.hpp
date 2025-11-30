@@ -30,14 +30,14 @@ protected:
   double _tol = 1.e-10;
   double armijo_max_iter = 20;
   double max_line_iters = 50;
-  int m = 5;
+  size_t m = 5;
   double alpha_wolfe = 1e-3;
   double c1 = 1e-4;
   double c2 = 0.9;
   double rho = 0.5;
 
   double line_search(V x, V p, VecFun<V, double> &f, GradFun<V> &Gradient) {
-    double f_x = f(x);
+    
     double grad_f_old = Gradient(x).dot(p);
 
     double inf = std::numeric_limits<double>::infinity();

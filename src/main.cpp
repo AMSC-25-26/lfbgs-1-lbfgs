@@ -35,7 +35,7 @@ int main() {
     Eigen::Matrix<autodiff::var, Eigen::Dynamic, 1> x(v.size());
     for (int i = 0; i < v.size(); ++i)
       x(i) = v(i);
-  https: // github.com/autodiff/autodiff.git
+  //https: github.com/autodiff/autodiff.git
     autodiff::var y = f_var(x);
     Vec dy_dv = autodiff::gradient(y, x);
 
@@ -45,7 +45,7 @@ int main() {
   int n = 15;
   Vec v(n);
   for (int i = 0; i < n; ++i)
-    v(i) = 0.25;
+    v(i) = 0.25*i;
 
   Mat m(n, n);
   m.setIdentity();
