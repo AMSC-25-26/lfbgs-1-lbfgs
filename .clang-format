@@ -1,0 +1,14 @@
+BasedOnStyle: LLVM
+BraceWrapping:
+  AfterFunction: false
+  AfterControlStatement: false
+  AfterClass: false
+  AfterStruct: false
+  AfterNamespace: false
+  AfterEnum: false
+  AfterExternBlock: false
+  BeforeElse: false
+  BeforeCatch: false
+# AllowShortIfStatementsOnASingleLine: true
+IndentPPDirectives: BeforeHash
+ColumnLimit: 0
